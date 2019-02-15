@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template
 from flask_rq2 import RQ
-from flask_sqlalchemy import SQLAlchemy
 from flask_pymongo import PyMongo
 from json import dumps
 import time
@@ -20,7 +19,7 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 database = client["wall_database"]
 
 # Access a collection in the database
-# A collection in MongoDB is the same as a table in SQL databases
+# A collection in MongoDB is similar to a table in SQL databases
 collection = database["wall_messages"]
 
 # Get the content of the post request as JSON then access the message
