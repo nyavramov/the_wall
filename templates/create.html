@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta charset="utf-8">
+
+        <title>{% block title %}Test Project!{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.min.css' ) }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/master.css') }}">
+
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <script>
+            function reload() {
+                document.location.reload();
+            }
+            setTimeout(reload, 5000);
+        </script>
+
+    </head>
+    <body>
+        <div class="container base-container">
+        <div class="columns">
+
+            <div class="column">
+                <div class="container has-text-centered">
+                    
+                    <h1 class="title">Test Project</h1>
+
+                    <form action="/create.html" method="post" enctype="multipart/form-data">
+                        <div class="field"><label class="label">Enter stuff here</label>
+                        <div class="control">
+                            <input name="url"
+                                   class="input"
+                                   type="url"
+                                   placeholder="Something to save"
+                                   required>
+                        </div></div>
+                    </form>
+
+                    {{some_text}}
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+
+        <title>The Wall</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.min.css' ) }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/master.css') }}">
+    </head>
+
+    <body>
+        <div class="container base-container">
+            <div class="columns"> 
+                <div class="column"> 
+
+                    <div class="container has-text-centered"> 
+                        <h1 class="title">The Wall</h1>
+                        <div class="field">
+                            <label class="label">Leave a message on the wall</label>
+
+                            <div class="control">
+                                <input id="submission_field" name="random_stuff" class="input" placeholder="Something to save" required>
+                            </div>
+                        </div>         
+                    </div> 
+                    <!--- end container --> 
+
+                    <div class="container has-text-centered"> 
+                        <div class="field" style="margin-top: 20px">
+
+                            <div class="control has-text-centered">
+                                <button id="submit-button" class="button is-link">Submit</button>
+                            </div>
+                                
+                            <ul id="the_wall">
+                                {% for message in messages %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div> 
+                    <!--- end container -->
+
+                </div> 
+                <!--- end column -->
+            </div> 
+            <!--- end columns -->
+        </div>
+    </body>
+</html>
