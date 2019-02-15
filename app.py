@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template
 from flask_rq2 import RQ
-from flask_sqlalchemy import SQLAlchemy
 from flask_pymongo import PyMongo
 from json import dumps
 import time
